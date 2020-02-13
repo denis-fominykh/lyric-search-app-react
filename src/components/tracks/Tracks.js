@@ -7,11 +7,11 @@ export class Tracks extends Component {
     return (
       <Consumer>
         {value => {
-          const {track_list} = value;
+          const { track_list } = value;
           if (track_list === undefined || track_list === 0) {
-            return <Spinner />
+            return <Spinner />;
           } else {
-            return <h1>Tracks loaded</h1>
+            return <h1>Tracks loaded</h1>;
           }
         }}
       </Consumer>
