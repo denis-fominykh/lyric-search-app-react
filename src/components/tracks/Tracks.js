@@ -6,6 +6,6 @@ export class Tracks extends Component {
       <div>
         <h1>Tracks</h1>
       </div>
-    )
+    );
   }
 }
