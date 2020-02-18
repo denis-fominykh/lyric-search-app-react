@@ -7,6 +7,19 @@ export class Search extends Component {
     trackTitle: '',
   };
 
+  findTrack = event => {
+    event.preventDefault();
+
+    axios
+      .get(
+        `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.search?q_track=${this.state.trackTitle}&page_size=10&page=1&s_track_rating=desc&apikey=${process.env.REACT_APP_MM_KEY}`,
+      )
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(error => console.log(error));
+  }
+
   onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -21,7 +34,7 @@ export class Search extends Component {
                 <i className="fas fa-music"></i> Search For A Song
               </h1>
               <p className="lead text-center">Get The Lyrics For Any Song</p>
-              <form>
+              <form onSubmit={this.findTrack}>
                 <div className="form-group">
                   <input
                     type="text"
