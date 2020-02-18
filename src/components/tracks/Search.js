@@ -18,7 +18,7 @@ export class Search extends Component {
         console.log(res.data);
       })
       .catch(error => console.log(error));
-  }
+  };
 
   onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
