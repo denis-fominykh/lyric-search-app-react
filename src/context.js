@@ -4,7 +4,7 @@ import axios from 'axios';
 const Context = React.createContext();
 
 const reducer = (state, action) => {
-  switch (action) {
+  switch (action.type) {
     case 'SEARCH_TRACKS':
       return {
         ...state,
