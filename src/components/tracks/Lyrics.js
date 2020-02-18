@@ -58,10 +58,10 @@ export class Lyrics extends Component {
             </li>
             <li className="list-group-item">
               <strong>Song Genre</strong>:{' '}
-              {
-                track.primary_genres.music_genre_list[0].music_genre
-                  .music_genre_name
-              }
+              {track.primary_genres.music_genre_list[0] === undefined
+                ? 'Empty'
+                : track.primary_genres.music_genre_list[0].music_genre
+                    .music_genre_name}
             </li>
             <li className="list-group-item">
               <strong>Explicit Words</strong>:{' '}
